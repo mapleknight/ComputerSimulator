@@ -29,7 +29,7 @@ public class CachePanel extends JPanel {
 	 * position of cacheline
 	 */
 	private int startPosX = 50;
-	private int startPosY = 30;
+	private int startPosY = 50;
 
 	/**
 	 * size of cacheline block
@@ -77,7 +77,7 @@ public class CachePanel extends JPanel {
 	}
 
 	public CachePanel() {
-		super();// /kanbudong
+		super();
 
 		TitledBorder nameTitle = new TitledBorder("Cache");
 		this.setBorder(nameTitle);
@@ -85,14 +85,15 @@ public class CachePanel extends JPanel {
 		this.setLayout(null);
 
 		hitRateInfo = new JLabel("HitRate Info");
-		hitRateInfo.setFont(getFont().deriveFont(10f));
+		hitRateInfo.setFont(getFont().deriveFont(12f));
 		this.add(hitRateInfo);
-		hitRateInfo.setBounds(10, 220, 250, 20);
+		hitRateInfo.setBounds(10, 250, 250, 20);
 
 		selectedData = new JLabel(defaultLabelMessage);
-		selectedData.setFont(getFont().deriveFont(10f));
+		selectedData.setFont(getFont().deriveFont(12f));
 		this.add(selectedData);
-		selectedData.setBounds(10, 12, 250, 20);
+		selectedData.setBounds(10, 17, 250, 20);
+
 
 		this.addMouseMotionListener(new MouseMotionListener() {
 

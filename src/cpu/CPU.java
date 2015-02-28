@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Observable;
 
+import memory.Cache;
 import memory.MainMemory;
 import memory.Memory;
 import common.Configuration;
@@ -95,7 +96,8 @@ public class CPU extends Observable {
 	/**
 	 * access to memory
 	 */
-	private Memory memory = MainMemory.getInstance();
+	//private Memory memory = MainMemory.getInstance();
+	private Memory memory = Cache.getInstance();
 	
 	public Memory getMemory(){
 		return this.memory;

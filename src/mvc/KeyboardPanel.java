@@ -45,7 +45,7 @@ public class KeyboardPanel extends JPanel implements Observer{
         
         //linkToKeyboard=new JLabel("Input from keyboard");
         this.add(linkToKeyboard);
-        linkToKeyboard.setBounds(10, 10, 250, 30);
+        linkToKeyboard.setBounds(10, 10, 250, 35);
         linkToKeyboard.setOpaque(false);
         linkToKeyboard.addKeyListener(
         		new KeyListener(){
@@ -129,9 +129,9 @@ public class KeyboardPanel extends JPanel implements Observer{
 		//Dimension size = this.getSize();
 		if(flashing){
 			g.setColor(new Color(20+8*degree,150+5*degree,20+5*degree));
-			g.fillRoundRect(5, 17, 200, 50, 4, 4);
+			g.fillRoundRect(5, 17, 200, 25, 4, 4);
 			g.setColor(Color.gray);
-			g.drawRoundRect(5, 17, 200, 50, 6, 6);
+			g.drawRoundRect(5, 17, 200, 25, 6, 6);
 		}
 		
 		super.paintComponent(g);

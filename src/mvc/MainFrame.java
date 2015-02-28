@@ -106,7 +106,7 @@ public class MainFrame extends JFrame implements Observer {
 		loadMemoryPanel.setBounds(275, 5, 170, 140);
 		
 		cachePanel=new CachePanel();
-		cachePanel.setBounds(5, 285, 260, 243);
+		cachePanel.setBounds(5, 285, 260, 275);
 		
 		
 		printerPanel = new PrinterPanel();
@@ -400,6 +400,7 @@ public class MainFrame extends JFrame implements Observer {
 							
 							registerItemPanel.update();
 							memoryViewPanel.update();
+							cachePanel.update();
 						} catch (NumberFormatException
 								| IllegalMemoryAddressException | RegisterNotFoundException e1) {
 							e1.printStackTrace();
@@ -459,6 +460,7 @@ public class MainFrame extends JFrame implements Observer {
 		if(arg == null){
 			registerItemPanel.update();
 			memoryViewPanel.update();
+			cachePanel.update();
 		}else{
 			int msg = (Integer)arg;
 			
@@ -469,6 +471,7 @@ public class MainFrame extends JFrame implements Observer {
 					runSingleStepButton.startFlash();
 					registerItemPanel.update();
 					memoryViewPanel.update();
+					cachePanel.update();
 					break;
 				
 				case(Message.MSG_CPU_STEP_CONTINUE):
@@ -476,11 +479,13 @@ public class MainFrame extends JFrame implements Observer {
 					runSingleStepButton.stopFlash();
 					registerItemPanel.update();
 					memoryViewPanel.update();
-					
+					cachePanel.update();
 					break;
 				
 				case(Message.MSG_CPU_CIRCLE_FINISH):
 					registerItemPanel.updateState();
+					memoryViewPanel.update();
+					cachePanel.update();
 					break;
 				default:
 					
